@@ -43,14 +43,7 @@ public:
         CoinControlFeatures, // bool
         ThreadsScriptVerif,  // int
         DatabaseCache,       // int
-        SpendZeroConfChange, // bool
-        ZeromintEnable,      // bool
-        ZeromintAddresses,   // bool
-        ZeromintPercentage,  // int
-        ZeromintPrefDenom,   // int
-        HideZeroBalances,    // bool
         HideOrphans,    // bool
-        AnonymizeAbetAmount, //int
         ShowMasternodesTab,  // bool
         Listen,              // bool
         StakeSplitThreshold, // int
@@ -90,7 +83,6 @@ private:
     int nDisplayUnit;
     QString strThirdPartyTxUrls;
     bool fCoinControlFeatures;
-    bool fHideZeroBalances;
     bool fHideOrphans;
     /* settings that were overriden by command-line */
     QString strOverriddenByCommandLine;
@@ -100,13 +92,7 @@ private:
 
 signals:
     void displayUnitChanged(int unit);
-    void zeromintEnableChanged(bool);
-    void zeromintAddressesChanged(bool);
-    void zeromintPercentageChanged(int);
-    void preferredDenomChanged(int);
-    void anonymizeAbetAmountChanged(int);
     void coinControlFeaturesChanged(bool);
-    void hideZeroBalancesChanged(bool);
     void hideOrphansChanged(bool);
 };
 
