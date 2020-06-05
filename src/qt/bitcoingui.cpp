@@ -825,10 +825,6 @@ void BitcoinGUI::gotoGovernancePage()
     if (walletFrame) walletFrame->gotoGovernancePage();
 }
 
-void BitcoinGUI::gotoGovernancePage()
-{
-}
-
 void BitcoinGUI::gotoReceiveCoinsPage()
 {
     receiveCoinsAction->setChecked(true);
