@@ -272,26 +272,7 @@ void MasternodeList::updateNodeList()
     ui->tableWidgetAllMasternodes->setRowCount(0);
     std::vector<CMasternode> vMasternodes = mnodeman.GetFullMasternodeVector();
 
-
-	    std::set<COutPoint> setOutpts;
-    if (walletModel && ui->checkBoxMyMasternodesOnly->isChecked()) {
-        std::vector<COutPoint> vOutpts;
-        walletModel->listProTxCoins(vOutpts);
-        for (const auto& outpt : vOutpts) {
-            setOutpts.emplace(outpt);
-        }
-    }
-
     for (CMasternode& mn : vMasternodes) {
-
-		if (walletModel && ui->checkBoxMyMasternodesOnly->isChecked()) {
-            bool fMyMasternode = setOutpts.count(dmn->collateralOutpoint) ||
-                                 walletModel->havePrivKey(dmn->pdmnState->keyIDOwner) ||
-                                 walletModel->havePrivKey(dmn->pdmnState->keyIDVoting) ||
-                                 walletModel->havePrivKey(dmn->pdmnState->scriptPayout) ||
-                                 walletModel->havePrivKey(dmn->pdmnState->scriptOperatorPayout);
-            if (!fMyMasternode) return;
-        }
         // populate list
         // Address, Protocol, Status, Active Seconds, Last Seen, Pub Key
         QTableWidgetItem* addressItem = new QTableWidgetItem(QString::fromStdString(mn.addr.ToString()));
