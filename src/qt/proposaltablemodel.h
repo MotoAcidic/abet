@@ -11,7 +11,7 @@
 #include "masternode-payments.h"
 #include "masternodeconfig.h"
 #include "masternodeman.h"
-#include "rpcserver.h"
+//#include "rpcserver.h"
 #include <QAbstractTableModel>
 #include <QJsonArray>
 #include <QJsonDocument>
